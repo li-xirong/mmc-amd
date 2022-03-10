@@ -1,5 +1,11 @@
-# mmc-amd
-Multi-modal categorization of Age-related Macular Degeneration (4 classes: normal, dry AMD, pcv, wet AMD)
+# MMC-AMD
+
+Code and data for multi-modal categorization of age-related macular degeneration (4 classes: normal, dry AMD, pcv, wet AMD)
+
+
+## Download
+
+Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 
 ## Citations
