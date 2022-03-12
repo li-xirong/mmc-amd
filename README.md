@@ -41,13 +41,13 @@ pip install -r requirements.txt
 We have prepared two jupyter notebook files, ```./code/inference-and-eval-single-modal.ipynb``` and ```./code/inference-and-eval-multi-modal.ipynb```, for single-modal and multi-modal inference, respectively.  
 
 ## Train
-1. To train a color fundus singe-modal model, please run 
+### 1. To train a color fundus singe-modal model, please run 
 ```bash scripts/do_train_cfp.sh```
-2. To train a color fundus singe-modal model, please run
+### 2. To train a color fundus singe-modal model, please run
 ```bash scripts/do_train_oct.sh```
-3. To train a multi-modal model without loose pair training, please run
+### 3. To train a multi-modal model without loose pair training, please run
 ```bash scripts/do_train_mm.sh```
-4. To train a multi-modal model with loose pair training, please run
+### 4. To train a multi-modal model with loose pair training, please run
 ```bash scripts/do_train_mm_loose.sh```
 
 ## Synthesize  Fundus / OCT Images
