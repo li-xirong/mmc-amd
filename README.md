@@ -31,9 +31,8 @@ Please download the pre-trained weights above, and put them into ```./code/weigh
 * <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
   ```conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0```
 * <b>Other Packages</b>
-```
-pip install -r requirements.txt
-```
+
+```pip install -r requirements.txt```
 
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
