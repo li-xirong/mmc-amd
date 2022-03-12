@@ -38,7 +38,9 @@ pip install -r requirements.txt
 ```
 
 ## Inference
-We have prepared two jupyter notebook files, ```./code/inference-and-eval-single-modal.ipynb``` and ```./code/inference-and-eval-multi-modal.ipynb```, for single-modal and multi-modal inference, respectively.  
+#### We have prepared two jupyter notebook files, 
+```./code/inference-and-eval-single-modal.ipynb``` and ```./code/inference-and-eval-multi-modal.ipynb```, 
+#### for single-modal and multi-modal inference, respectively.  
 
 ## Train
 #### 1. To train a color fundus singe-modal model, please run 
