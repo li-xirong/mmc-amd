@@ -1,0 +1,8 @@
+code/__pycache__
+code/.ipynb_checkpoints
+code/*/__pycache__
+code/*/.ipynb_checkpoints
+code/weights
+code/VisualSearch/*/*
+code/camconditioned-pix2pixHD/checkpoints/*/*
+code/camconditioned-pix2pixHD/datasets/*/*

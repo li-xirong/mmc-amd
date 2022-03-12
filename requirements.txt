@@ -1,0 +1,7 @@
+tqdm
+numpy
+matplotlib
+dominate==2.3.5
+opencv_python==4.1.2.30
+Pillow==8.2.0
+scikit_learn==0.24.2
