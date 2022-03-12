@@ -36,9 +36,9 @@ Please download the pre-trained weights above, and put them into ```./code/weigh
 
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
-```./code/inference-and-eval-single-modal.ipynb```
+```./notebooks/inference-and-eval-single-modal.ipynb```
 
-```./code/inference-and-eval-multi-modal.ipynb```
+```./notebooks/inference-and-eval-multi-modal.ipynb```
 
 ## MMC-AMD Training
 #### 1. To train a color fundus singe-modal model, please run 
