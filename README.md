@@ -16,12 +16,12 @@ Code and data for multi-modal categorization of age-related macular degeneration
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 * <b>Pre-trained Models</b>
-  * [single_fundus-clahe](http://lixirong.net/share/modelzoo/mmcnn/single_fundus-clahe.pth): A resnet18 trained on pre-processed fundus images.
-  * [single_oct-median3x3](http://lixirong.net/share/modelzoo/mmcnn/single_oct-median3x3.pth): A resnet18 trained on pre-processed fundus images.
-  * [multi_clahe-median3x3](http://lixirong.net/share/modelzoo/mmcnn/multi_clahe-median3x3.pth): A two-stream CNN trained on pre-processed multi-modal images.
-  * [fundus_net-G](http://lixirong.net/share/modelzoo/mmcnn/fundus_net-G.pth): A generator trained by fundus CAMs.
-  * [oct_net-G](http://lixirong.net/share/modelzoo/mmcnn/oct_net-G.pth): A generator trained by oct CAMs. \
-Note that we pre-process fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
+  | Model | F1 score |  |
+  | :----: | :----: | :---- |
+  | [CFP-CNN]() | ? | A resnet18 trained on color fundus images |
+  | [OCT-CNN]() | ? | A resnet18 trained on OCT images |
+  | [OCT-CNN]() | ? | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
 
 Please download the pre-trained weights above, and put them into
 ```
