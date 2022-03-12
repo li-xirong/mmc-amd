@@ -82,26 +82,26 @@ Please put the dataset we provided into ```./code/VisualSearch/```, which is org
 
 ## MMC-AMD Training
 #### 1. To train a color fundus singe-modal model, please run 
-```bash scripts/do_train_cfp.sh```
+```bash ./scripts/do_train_cfp.sh```
 #### 2. To train a color fundus singe-modal model, please run
-```bash scripts/do_train_oct.sh```
+```bash ./scripts/do_train_oct.sh```
 #### 3. To train a multi-modal model without loose pair training, please run
-```bash scripts/do_train_mm.sh```
+```bash ./scripts/do_train_mm.sh```
 #### 4. To train a multi-modal model with loose pair training, please run
-```bash scripts/do_train_mm_loose.sh```
+```bash ./scripts/do_train_mm_loose.sh```
 
 ## CAM-conditioned image synthesis
 #### 1. Prepare CAM-conditioned label
 * Make sure you have a trained CFP-CNN and a trained OCT-CNN. 
 * Run the command below to generate CFP CAMs and OCT CAMs, respectively
   
-  ```bash scripts/do_generatecam.sh``` 
+  ```bash ./scripts/do_generatecam.sh``` 
 * link the CAM dir generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
 * link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` which is generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
 #### 2. Train pix2pixHD and synthesize  
-```bash scripts/do_synthesis_cfp.sh```
+```bash ./scripts/do_synthesis_cfp.sh```
 
-```bash scripts/do_synthesis_oct.sh```
+```bash ./scripts/do_synthesis_oct.sh```
 
 ## Citations
 
