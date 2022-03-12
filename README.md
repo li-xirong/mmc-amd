@@ -16,7 +16,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 * <b>Pre-trained Models</b>
-  | Model | F1 score |  |
+  | Model       | F1 score |  |
   | :---------: | :----: | :---- |
   | [CFP-CNN]() | ? | A resnet18 trained on color fundus images |
   | [OCT-CNN]() | ? | A resnet18 trained on OCT images |
