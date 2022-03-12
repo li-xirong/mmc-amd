@@ -37,22 +37,58 @@ Please download the pre-trained weights above, and put them into ```./code/weigh
 ## Dataset Organizaton
 Please put the dataset we provided into ./code/VisualSearch/, which is organized according to the rules below:
 ```
-./code/VisualSearch/mmc-amd
-	ImageData/
-		cfp-clahe-448x448/
-			f-*.jpg
-		oct-median3x3-448x448/
-			o-*.jpg
-	annotations/
-		fundus.txt
-		oct.txt
-	ImageSets/
-		fundus.txt
-		oct.txt
-	fundus-images/
-		f-*.jpg
-	oct-imges/
-		o-*.jpg
+./code/VisualSearch/
+	mmc-amd/
+		ImageData/
+			cfp-clahe-448x448/
+				f-*.jpg
+			oct-median3x3-448x448/
+				o-*.jpg
+	mmc-amd-splitA-train/
+		ImageSets/		(record image ID)
+			cfp.txt
+			oct.txt
+		EyeSets/		(record eye ID)
+			cfp.txt
+			oct.txt
+		SubjectSets/		(record patient ID)
+			cfp.txt
+			oct.txt
+		annotations/		
+			cfp.txt
+			oct.txt
+		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
+		
+	mmc-amd-splitA-val/
+		ImageSets/
+			cfp.txt
+			oct.txt
+		EyeSets/
+			cfp.txt
+			oct.txt
+		SubjectSets/
+			cfp.txt
+			oct.txt
+		annotations/
+			cfp.txt
+			oct.txt
+		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
+		
+	mmc-amd-splitA-test/
+		ImageSets/
+			cfp.txt
+			oct.txt
+			mm.txt		(record cfp-oct pairs)
+		EyeSets/
+			cfp.txt
+			oct.txt
+		SubjectSets/
+			cfp.txt
+			oct.txt
+		annotations/
+			cfp.txt
+			oct.txt
+		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
 ```
 
 ## MMC-AMD Inference
@@ -83,26 +119,6 @@ Please put the dataset we provided into ./code/VisualSearch/, which is organized
 ```bash scripts/do_synthesis_cfp.sh```
 
 ```bash scripts/do_synthesis_oct.sh```
-
-### II. Train
-#### 1. Data
-Experimental dataset is made by synthetic images. The dataset are save as below: 
-
-```
-./code/VisualSearch/train/ (./code/VisualSearch/val/)
-	annotations/
-		fundus.txt
-		oct.txt
-	ImageSets/
-		fundus.txt
-		oct.txt
-	fundus-images/
-		f-*.jpg
-	oct-imges/
-		o-*.jpg
-```
-Note that we provide 10 synthetic images per class as a toy dataset. 
-
 
 ## Citations
 
