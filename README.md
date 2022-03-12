@@ -37,6 +37,11 @@ conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0
 pip install -r requirements.txt
 ```
 
+## Inference
+We have prepared two jupyter notebook files, ```code/inference-and-eval-single-modal.ipynb``` and ```code/inference-and-eval-multi-modal.ipynb```, for single-modal and multi-modal inference, respectively.  
+
+## Train
+
 ## Synthesize  Fundus / OCT Images
 To expand the training set, we synthesize fake fundus / OCT images by pix2pixHD, a high-resolution image-to-image translation network re-purposed in the new context. As shown at the top left part of the Fig 1, given a source image of 3x448x448, let it be color fundus or OCT, we pre-train the corresponding single-modal CNN to produce CAMs with respect to each AMD class. The CAMs are stacked to form an three-channel image [CAM<sub>dry</sub> ; CAM<sub>PCV</sub>; CAM<sub>wet</sub> ] of 3x14x14, which is then fed into pix2pixHD for image synthesis. Specifically, a fully convolutional network known as an auxiliary generator G<sub>a</sub> is adopted to generate an image of 3x224x224. With the help of G<sub>a</sub>, another fully convolutional network known as a main generator G<sub>m</sub> is then used to generate a double-sized image. Manipulating the CAMs results in multiple synthesized images. 
 
