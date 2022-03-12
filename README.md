@@ -34,8 +34,26 @@ Note that we pre-process color fundus images by CLAHE and oct by median blur, an
 
 Please download the pre-trained weights above, and put them into ```./code/weights/```
 
-## Dataset organizaton
+## Dataset Organizaton
 Please put the dataset we provided into ./code/VisualSearch/, which is organized according to the rules below:
+```
+./code/VisualSearch/mmc-amd
+	ImageData/
+		cfp-clahe-448x448/
+			f-*.jpg
+		oct-median3x3-448x448/
+			o-*.jpg
+	annotations/
+		fundus.txt
+		oct.txt
+	ImageSets/
+		fundus.txt
+		oct.txt
+	fundus-images/
+		f-*.jpg
+	oct-imges/
+		o-*.jpg
+```
 
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
