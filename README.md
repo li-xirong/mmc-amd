@@ -16,7 +16,6 @@ Code and data for multi-modal categorization of age-related macular degeneration
 * <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
   ```conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0```
 * <b>Other Packages</b>
-
   ```pip install -r requirements.txt```
   
 ## Download
