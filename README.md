@@ -35,7 +35,7 @@ Note that we pre-process color fundus images by CLAHE and oct by median blur, an
 Please download the pre-trained weights above, and put them into ```./code/weights/```
 
 ## Dataset Organizaton
-Please put the dataset we provided into ./code/VisualSearch/, which is organized according to the rules below:
+Please put the dataset we provided into ./code/VisualSearch/, which is organized according to the rules below. Besides, more details are provided in ```./notebooks/count_data.ipynb```
 ```
 ./code/VisualSearch/
 	mmc-amd/
