@@ -12,6 +12,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
 
 ## Download
 * <b>Dataset</b>
+
 Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 * <b>Pre-trained Models</b>
