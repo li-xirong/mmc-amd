@@ -75,7 +75,6 @@ Please put the dataset we provided into ./code/VisualSearch/, which is organized
 			oct.txt
 		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
 ```
-
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
 ```./notebooks/inference-and-eval-single-modal.ipynb```
