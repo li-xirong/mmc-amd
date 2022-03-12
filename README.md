@@ -30,7 +30,7 @@ Please download the pre-trained weights above, and put them into ```./code/weigh
 * <b>CUDA-10.1</b>
 * <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
 ```
-conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0
 ```
 * <b>Other Packages</b>
 ```
