@@ -59,22 +59,7 @@ Please put the dataset we provided into ./code/VisualSearch/, which is organized
 			oct.txt
 		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
 		
-	mmc-amd-splitA-val/
-		ImageSets/
-			cfp.txt
-			oct.txt
-		EyeSets/
-			cfp.txt
-			oct.txt
-		SubjectSets/
-			cfp.txt
-			oct.txt
-		annotations/
-			cfp.txt
-			oct.txt
-		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
-		
-	mmc-amd-splitA-test/
+	mmc-amd-splitA-val/ (mmc-amd-splitA-test/)
 		ImageSets/
 			cfp.txt
 			oct.txt
