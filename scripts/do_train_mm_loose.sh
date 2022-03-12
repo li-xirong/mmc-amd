@@ -1,11 +1,10 @@
 cd code/
 device=2 #Choose a GPU
-for ((i=2;i<=2;i++))
-do
-run_id=$i
+
+run_id=1
 train_collection="VisualSearch/mmc-amd-splitA-train"
 val_collection="VisualSearch/mmc-amd-splitA-val"
-configs_name="config-oct.py"
+configs_name="config-mm-loose.py"
 num_workers=4
 
 python train.py --train_collection $train_collection \
@@ -15,4 +14,3 @@ python train.py --train_collection $train_collection \
                 --device $device \
                 --num_workers $num_workers \
                 --overwrite
-done
