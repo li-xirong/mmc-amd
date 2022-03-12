@@ -11,21 +11,9 @@ Code and data for multi-modal categorization of age-related macular degeneration
 </center>
 
 ## Download
-
+* <b>Dataset</b>
 Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
-
-## Requirements
-* <b>Python-3.7.10</b>
-* <b>CUDA-10.1</b>
-* <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
-```
-conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
-```
-* <b>Other Packages</b>
-```
-pip install -r requirements.txt
-```
 * <b>Pre-trained Models</b>
   * [single_fundus-clahe](http://lixirong.net/share/modelzoo/mmcnn/single_fundus-clahe.pth): A resnet18 trained on pre-processed fundus images.
   * [single_oct-median3x3](http://lixirong.net/share/modelzoo/mmcnn/single_oct-median3x3.pth): A resnet18 trained on pre-processed fundus images.
@@ -37,6 +25,18 @@ Note that we pre-process fundus images by CLAHE and oct by median blur, and then
 Please download the pre-trained weights above, and put them into
 ```
 ./code/weights/
+```
+
+## Requirements
+* <b>Python-3.7.10</b>
+* <b>CUDA-10.1</b>
+* <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
+```
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+```
+* <b>Other Packages</b>
+```
+pip install -r requirements.txt
 ```
 
 ## Synthesize  Fundus / OCT Images
