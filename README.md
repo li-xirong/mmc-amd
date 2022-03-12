@@ -40,6 +40,7 @@ pip install -r requirements.txt
 ## Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
 ```./code/inference-and-eval-single-modal.ipynb```
+
 ```./code/inference-and-eval-multi-modal.ipynb```
 
 ## Train
