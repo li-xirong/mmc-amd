@@ -10,6 +10,15 @@ Code and data for multi-modal categorization of age-related macular degeneration
     <div style="color:orange;  display: inline-block;    color: black;    padding: 2px;" align="center"><h>Fig.1. PIPLINE</h></div>
 </center>
 
+## Requirements
+* <b>Python-3.7.10</b>
+* <b>CUDA-10.1</b>
+* <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
+  ```conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0```
+* <b>Other Packages</b>
+
+  ```pip install -r requirements.txt```
+  
 ## Download
 * <b>Dataset</b>
 
@@ -25,14 +34,8 @@ Note that we pre-process color fundus images by CLAHE and oct by median blur, an
 
 Please download the pre-trained weights above, and put them into ```./code/weights/```
 
-## Requirements
-* <b>Python-3.7.10</b>
-* <b>CUDA-10.1</b>
-* <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
-  ```conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0```
-* <b>Other Packages</b>
-
-  ```pip install -r requirements.txt```
+## Dataset organizaton
+Please put the dataset we provided into ./code/VisualSearch/, which 
 
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
