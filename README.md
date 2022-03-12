@@ -61,6 +61,7 @@ pip install -r requirements.txt
 * link the image dir (```code/VisualSearch/mmc-amd/ImageData/$MODALITY```) generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
 #### 2. Train pix2pixHD and synthesize  
 ```bash scripts/do_synthesis_cfp.sh```
+
 ```bash scripts/do_synthesis_oct.sh```
 
 ### II. Train
