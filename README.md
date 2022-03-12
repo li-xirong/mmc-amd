@@ -29,9 +29,7 @@ Please download the pre-trained weights above, and put them into ```./code/weigh
 * <b>Python-3.7.10</b>
 * <b>CUDA-10.1</b>
 * <b>Pytorch-1.1.0</b> & <b>torchvision-0.3.0</b>
-```
-conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0
-```
+  ```conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0```
 * <b>Other Packages</b>
 ```
 pip install -r requirements.txt
@@ -57,15 +55,13 @@ pip install -r requirements.txt
 #### 1. Prepare CAM-conditioned label
 * Make sure you have a trained CFP-CNN and a trained OCT-CNN. 
 * Run the command below to generate CFP CAMs and OCT CAMs, respectively
-```
-bash scripts/do_generatecam.sh
-``` 
+  
+  ```bash scripts/do_generatecam.sh``` 
 * link the CAM dir generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
 * link the image dir (```code/VisualSearch/mmc-amd/ImageData/$MODALITY```) generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
 #### 2. Train pix2pixHD and synthesize  
 ```bash scripts/do_synthesis_cfp.sh```
 ```bash scripts/do_synthesis_oct.sh```
-
 
 ### II. Train
 #### 1. Data
