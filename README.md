@@ -13,7 +13,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
 ## Download
 * <b>Dataset</b>
 
-Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
+    Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 * <b>Pre-trained Models</b>
   * [single_fundus-clahe](http://lixirong.net/share/modelzoo/mmcnn/single_fundus-clahe.pth): A resnet18 trained on pre-processed fundus images.
