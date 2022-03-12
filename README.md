@@ -54,51 +54,16 @@ pip install -r requirements.txt
 ```bash scripts/do_train_mm_loose.sh```
 
 ## CAM-conditioned image synthesis
-#### 1. prepare CAM-conditioned label
+#### 1. Prepare CAM-conditioned label
 * Make sure you have a trained CFP-CNN and a trained OCT-CNN. 
 * Run the command below to generate CFP CAMs and OCT CAMs, respectively
 ```bash scripts/do_generatecam.sh``` 
 * link the CAM dir generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
 * link the image dir (```code/VisualSearch/mmc-amd/ImageData/$MODALITY```) generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
+#### 2. Train pix2pixHD and synthesize  
+```bash scripts/do_synthesis_cfp.sh```
+```bash scripts/do_synthesis_oct.sh```
 
-## Synthesize  Fundus / OCT Images
-To expand the training set, we synthesize fake fundus / OCT images by pix2pixHD, a high-resolution image-to-image translation network re-purposed in the new context. As shown at the top left part of the Fig 1, given a source image of 3x448x448, let it be color fundus or OCT, we pre-train the corresponding single-modal CNN to produce CAMs with respect to each AMD class. The CAMs are stacked to form an three-channel image [CAM<sub>dry</sub> ; CAM<sub>PCV</sub>; CAM<sub>wet</sub> ] of 3x14x14, which is then fed into pix2pixHD for image synthesis. Specifically, a fully convolutional network known as an auxiliary generator G<sub>a</sub> is adopted to generate an image of 3x224x224. With the help of G<sub>a</sub>, another fully convolutional network known as a main generator G<sub>m</sub> is then used to generate a double-sized image. Manipulating the CAMs results in multiple synthesized images. 
-
-To synthesize fake fundus / OCT images, we need:
-
-* Real fundus / OCT images, which we provide at
-```
-./code/test_images/test-f-p.jpg
-./code/test_images/test-o-p.jpg
-```
-* Pre-trained Resnet18 to encoding fundus / OCT images to CAMs:
-```
-./code/weights/single_fundus-clahe.pth
-./code/weights/single_oct-median3x3.pth
-```
-* Pre-trained Pix2pixHD generator to synthesize images from CAMs:
-```
-./code/weights/fundus_net-G.pth
-./code/weights/oct_net-G.pth
-```
-
-<b>We provide the  synthesizing codes in notebook</b> ```./code/demo_synthesize_img.ipynb```
-
-## Multi-modal CNN
-
-As shown at the top right of the Fig.1, given a pair of fundus and OCT images I<sub>f</sub> and I<sub>o</sub> taken , our two-stream CNN makes a four-class prediction concerning the probability of the eye being normal, dry AMD, PCV and wet AMD, respectively. Extending CAM to the multi-modal scenario allows us to visualize contributions of the individual modalities to final predictions. 
-
-### I. Inference
-
-We provide a pre-trained MM-CNN at
-```
-./code/weights/multi_clahe-median3x3.pth
-```
-and you can test it using notebook 
-```
-./code/demo_mm_inference.ipynb
-```
-This notebook returns prediction and visualized contribution when given a fundus & OCT pair.
 
 ### II. Train
 #### 1. Data
@@ -118,30 +83,7 @@ Experimental dataset is made by synthetic images. The dataset are save as below:
 		o-*.jpg
 ```
 Note that we provide 10 synthetic images per class as a toy dataset. 
-#### 2. Train
 
-```shell
-cd code
-device=0 #Choose a GPU
-run_id=1
-train_collection="VisualSearch/train"
-val_collection="VisualSearch/val"
-configs_name="config-mm.py"
-num_workers=4
-
-python train.py --train_collection $train_collection \
-                --val_collection $val_collection \
-                --model_configs $configs_name \
-                --run_id $run_id \
-                --device $device \
-                --num_workers $num_workers \
-                --overwrite
-```
-
-Run the commands above, and the checkpoints will be saved in 
-```
-./code/VisualSearch/train/models/val/config-mm.py/run_1/
-```
 
 ## Citations
 
