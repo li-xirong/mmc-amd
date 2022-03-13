@@ -103,6 +103,8 @@ Please put the dataset we provided into ```./code/VisualSearch/```, which is org
 
 ```bash ./scripts/do_synthesis_oct.sh```
 
+The synthetic images can be used in MMC-AMD Training
+
 ## Citations
 
 If you find this repository useful, please consider citing:
