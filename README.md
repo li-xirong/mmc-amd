@@ -7,7 +7,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
 <center>
     <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"     src="images/pipeline.jpg">
     <br>
-    <div style="color:orange;  display: inline-block;    color: black;    padding: 2px;" align="center"><h>Fig.1. PIPLINE</h></div>
+    <div style="color:orange;  display: inline-block;    color: black;    padding: 2px;" align="center"><h>Fig. PIPLINE</h></div>
 </center>
 
 ## Requirements
