@@ -25,8 +25,11 @@ Code and data for multi-modal categorization of age-related macular degeneration
 
 * <b>Pre-trained Models on splitA</b>
   We have prepared the pre-trained model on Baidu Netdisc:
-  ```url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
-  extraction code：y1wl```
+  ```
+  url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
+  extraction code：y1wl
+  ```
+  
   | Model       | F1 score |  |
   | :---------: | :----: | :---- |
   | CFP-CNN | 0.799 | A resnet18 trained on color fundus images |
