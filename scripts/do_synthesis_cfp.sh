@@ -12,12 +12,12 @@ python manipulate.py --cams_dir  $cams_dir \
                      --dst_dir  $dst_dir \
                      --modality $modality
 
-python train.py --no_instance --camlabel --norm batch --dataroot $data_root --niter 10 --niter_decay 10 \
+python train.py --no_instance --camlabel --norm batch --dataroot $data_root --niter 100 --niter_decay 100 \
                 --name $split_name"_"$modality"_256" --gpu_ids $gpu_ids --resize_or_crop resize_and_crop \
                 --loadSize 272  --fineSize 256  --batchSize 8
 
 python train.py --name $split_name"_"$modality"_512" --dataroot $data_root --netG local --ngf 32 \
-       --num_D 2 --load_pretrain "checkpoints/"$split_name"_"$modality"_256/" --niter 5 --niter_decay 5 \
+       --num_D 2 --load_pretrain "checkpoints/"$split_name"_"$modality"_256/" --niter 50 --niter_decay 50 \
        --niter_fix_global 20 --resize_or_crop resize_and_crop --loadSize 520 --camlabel \
        --fineSize 512 --no_instance --gpu_ids $gpu_ids --batchSize 2
 
