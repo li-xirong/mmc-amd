@@ -7,7 +7,7 @@ val_collection="VisualSearch/mmc-amd-splitA-val"
 configs_name="config-oct.py"
 num_workers=4
 
-python train-single.py --train_collection $train_collection \
+python train.py --train_collection $train_collection \
                 --val_collection $val_collection \
                 --model_configs $configs_name \
                 --run_id $run_id \
