@@ -23,12 +23,20 @@ Code and data for multi-modal categorization of age-related macular degeneration
 
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
-* <b>Pre-trained Models</b>
+* <b>Pre-trained Models on splitA</b>
   | Model       | F1 score |  |
   | :---------: | :----: | :---- |
   | [CFP-CNN]() | ? | A resnet18 trained on color fundus images |
   | [OCT-CNN]() | ? | A resnet18 trained on OCT images |
   | [MM-CNN-da]()  | ? | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+  
+* <b>Pre-trained Models on splitAP</b>
+  | Model       | F1 score |  |
+  | :---------: | :----: | :---- |
+  | [CFP-CNN]() | ? | A resnet18 trained on color fundus images |
+  | [OCT-CNN]() | ? | A resnet18 trained on OCT images |
+  | [MM-CNN-da]()  | ? | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+  
 Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
 
 Please download the pre-trained weights above, and put them into ```./code/weights/```
