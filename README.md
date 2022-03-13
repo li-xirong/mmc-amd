@@ -33,9 +33,9 @@ Code and data for multi-modal categorization of age-related macular degeneration
 * <b>Pre-trained Models on splitAP</b>
   | Model       | F1 score |  |
   | :---------: | :----: | :---- |
-  | [CFP-CNN]() | ? | A resnet18 trained on color fundus images |
-  | [OCT-CNN]() | ? | A resnet18 trained on OCT images |
-  | [MM-CNN-da]()  | ? | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+  | [CFP-CNN]() | 0.756 | A resnet18 trained on color fundus images |
+  | [OCT-CNN]() | 0.877 | A resnet18 trained on OCT images |
+  | [MM-CNN-da]()  | 0.919 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
   
 Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
 
