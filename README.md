@@ -24,10 +24,13 @@ Code and data for multi-modal categorization of age-related macular degeneration
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
   
 * <b>Pre-trained Models</b>
-  We have prepared the pre-trained model on Baidu Netdisc:
+  We have upload the pre-trained model in Baidu Netdisc and Google Drive:
   ```
+  Baidu Netdisc
   url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
   extraction code：y1wl
+  Google Drive
+  https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing
   ```
 	* <b>Pre-trained Models performance on splitA</b>
 	  | Model       | F1 score |  |
