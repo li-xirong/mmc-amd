@@ -24,6 +24,9 @@ Code and data for multi-modal categorization of age-related macular degeneration
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
 
 * <b>Pre-trained Models on splitA</b>
+  We have prepared the pre-trained model on Baidu Netdisc:
+  ```url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
+  extraction code：y1wl```
   | Model       | F1 score |  |
   | :---------: | :----: | :---- |
   | CFP-CNN | 0.799 | A resnet18 trained on color fundus images |
