@@ -24,6 +24,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
     Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
   
 * <b>Pre-trained Models</b>
+
   We have upload the pre-trained model in Baidu Netdisc and Google Drive:
   ```
   Baidu Netdisc:
