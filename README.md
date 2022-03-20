@@ -83,7 +83,7 @@ The test performance of these trained models are as follows. Note that the numbe
 
 ## Inference
 
-+ [notebooks/inference-and-eval-single-modal.ipynb](notebooks/inference-and-eval-single-modal.ipynb): Run and evaluat4e a single-modal CNN
++ [notebooks/inference-and-eval-single-modal.ipynb](notebooks/inference-and-eval-single-modal.ipynb): Run and evaluate a single-modal CNN
 + [notebooks/inference-and-eval-multi-modal.ipynb](notebooks/inference-and-eval-multi-modal.ipynb): Run and evaluate a multi-modal CNN
 
 ## Training AMD Models
