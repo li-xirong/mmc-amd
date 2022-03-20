@@ -70,9 +70,9 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 
 ## Model Zoo
 
-Download from [Baidu pan](https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA) (code: y1wl), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing)
+We provide a number of trained single-modal / multi-modal CNNs at [Baidu pan](https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA) (code: y1wl), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing). 
 
-The test performance of these trained models are as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
+The test performance of these trained models on the two distinct data splits is as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
 
 | Model | Description | splitA-test | splitAP-test |
 | :--------- | :---- | ----: | ----: |
@@ -94,24 +94,38 @@ The test performance of these trained models are as follows. Note that the numbe
 | bash [scripts/do_train_oct.sh](scripts/do_train_oct.sh) | train an OCT-CNN |
 | bash [scripts/do_train_mm.sh](scripts/do_train_mm.sh) | train an MM-CNN with conventional data argumentation |
 | bash [scripts/do_train_mm_loose.sh](scripts/do_train_mm_loose.sh) | train an MM-CNN with loose pairing | 
-| bash | train an MM-CNN with synthetic data and loose pairing | 
+| bash [scripts/do_train_mm_da.sh](scripts/do_train_mm_da.sh) | train an MM-CNN with synthetic data and loose pairing | 
 
 
 
 ## CAM-conditioned image synthesis
-#### 1. Prepare CAM-conditioned label
-* Make sure you have a trained CFP-CNN and a trained OCT-CNN. 
-* Run the command below to generate CFP CAMs and OCT CAMs, respectively
-  
-  ```bash ./scripts/do_generatecam.sh``` 
-* link the CAM dir generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
-* link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
-#### 2. Train pix2pixHD and synthesize  
-```bash ./scripts/do_synthesis_cfp.sh```
 
-```bash ./scripts/do_synthesis_oct.sh```
+### Step 1. Generate CAMs per modality
++ Make sure you have trained or downloaded CFP-CNN / OCT-CNN
 
-The synthetic images can be used in MMC-AMD Training
+```bash
+bash do_generate_cam.sh cfp
+bash do_generate_cam.sh oct
+```
+
+Once the CAMs are produced,
++ Link the CAM data folder to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
++ Link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
+
+
+### Step 2. Train pix2pixHD per modality
+```bash
+do_train_pix2pixHD.sh cfp
+do_train_pix2pixHD.sh oct
+```
+
+### Step 3. Synthesize CFP / OCT images
+
+```bash
+bash do_img_synthesis.sh cfp
+bash do_img_synthesis.sh oct
+``` 
+
 
 ## Citations
 
