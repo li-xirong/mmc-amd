@@ -1,13 +1,13 @@
 # MMC-AMD
 
-##### |[Paper](https://arxiv.org/pdf/2012.01879)|
-
 Code and data for multi-modal categorization of age-related macular degeneration (4 classes: normal, dry AMD, pcv, wet AMD)
+
+[MICAAI2019 paper](https://arxiv.org/abs/1907.12023) | [Extended version](https://arxiv.org/abs/2012.01879)
 
 <center>
     <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"     src="pipeline.jpg">
     <br>
-    <div style="color:orange;  display: inline-block;    color: black;    padding: 2px;" align="center"><h>Fig. PIPELINE</h></div>
+    <div style="color:orange;  display: inline-block;    color: black;  padding: 2px;" align="left"><h><b>Proposed end-to-end deep learning solution for multi-modal AMD categorization</b>. Given a pair of CFP and OCT images from a specific eye, our two-stream CNN makes a four-class prediction concerning the probability of the eye being normal, dryAMD, PCV and wetAMD, respectively. </h></div>
 </center>
 
 ## Requirements
@@ -18,41 +18,15 @@ Code and data for multi-modal categorization of age-related macular degeneration
 * <b>Other Packages</b>
   ```pip install -r requirements.txt```
   
-## Download
-* <b>Dataset</b>
+## Data
 
-    Data is freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
-  
-* <b>Pre-trained Models</b>
++ **MMC-AMD**, a multi-modal fundus image set consisting of 1,093 color fundus photograph (CFP) images and 1,288 OCT B-scan images (~470MB). Freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
++ **MMC-AMD (splitA)**: An eye-based split of training / validation / test sets (zero eye overlap) [Google drive](https://drive.google.com/file/d/1El2pBzNnQsjRVLE_QwFNhS05HWJMPwkU/view?usp=sharing)
++ **MMC-AMD (splitAP)**: A patient-based split of training / validation / test sets (zero patient overlap) [Google drive](https://drive.google.com/file/d/1KwJdsQmO__TpCW2AcRdsoTocu-zwcZuT/view?usp=sharing)
 
-  We have upload the pre-trained model in Baidu Netdisc and Google Drive:
-  ```
-  Baidu Netdisc:
-	  url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
-	  extraction code：y1wl
-  Google Drive:
-	  https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing
-  ```
-	* <b>Pre-trained Models performance on splitA</b>
-	  | Model       | F1 score |  |
-	  | :---------: | :----: | :---- |
-	  | CFP-CNN | 0.799 | A resnet18 trained on color fundus images |
-	  | OCT-CNN | 0.891 | A resnet18 trained on OCT images |
-	  | MM-CNN-da | 0.917 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
-  
-	* <b>Pre-trained Models performance on splitAP</b>
-	  | Model       | F1 score |  |
-	  | :---------: | :----: | :---- |
-	  | CFP-CNN | 0.756 | A resnet18 trained on color fundus images |
-	  | OCT-CNN | 0.877 | A resnet18 trained on OCT images |
-	  | MM-CNN-da | 0.919 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
-  
-Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
+### Organizaton
 
-Please download the pre-trained weights above, and put them into ```./code/weights/```
-
-## Dataset Organizaton
-Please put the dataset we provided into ```./code/VisualSearch/```, which is organized according to the rules below. Besides, more details are provided in ```./notebooks/count_data.ipynb```
+By default, all the data folders are assumed to be placed (via symbolic links) at [code/VisualSearch](code/VisualSearch). The folders are organized as follows, see [notebooks/count_data.ipynb](notebooks/count_data.ipynb) for a code-level understanding.
 ```
 ./code/VisualSearch/
 	mmc-amd/
@@ -92,6 +66,38 @@ Please put the dataset we provided into ```./code/VisualSearch/```, which is org
 			oct.txt
 		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
 ```
+
+
+    
+  
+* <b>Pre-trained Models</b>
+
+  We have upload the pre-trained model in Baidu Netdisc and Google Drive:
+  ```
+  Baidu Netdisc:
+	  url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
+	  extraction code：y1wl
+  Google Drive:
+	  https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing
+  ```
+	* <b>Pre-trained Models performance on splitA</b>
+	  | Model       | F1 score |  |
+	  | :---------: | :----: | :---- |
+	  | CFP-CNN | 0.799 | A resnet18 trained on color fundus images |
+	  | OCT-CNN | 0.891 | A resnet18 trained on OCT images |
+	  | MM-CNN-da | 0.917 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+  
+	* <b>Pre-trained Models performance on splitAP</b>
+	  | Model       | F1 score |  |
+	  | :---------: | :----: | :---- |
+	  | CFP-CNN | 0.756 | A resnet18 trained on color fundus images |
+	  | OCT-CNN | 0.877 | A resnet18 trained on OCT images |
+	  | MM-CNN-da | 0.919 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
+  
+Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
+
+Please download the pre-trained weights above, and put them into ```./code/weights/```
+
 ## MMC-AMD Inference
 #### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
 ```./notebooks/inference-and-eval-single-modal.ipynb```
