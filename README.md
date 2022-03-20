@@ -68,51 +68,35 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 ```
 
 
-    
-  
-* <b>Pre-trained Models</b>
+## Model Zoo
 
-  We have upload the pre-trained model in Baidu Netdisc and Google Drive:
-  ```
-  Baidu Netdisc:
-	  url：https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA 
-	  extraction code：y1wl
-  Google Drive:
-	  https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing
-  ```
-	* <b>Pre-trained Models performance on splitA</b>
-	  | Model       | F1 score |  |
-	  | :---------: | :----: | :---- |
-	  | CFP-CNN | 0.799 | A resnet18 trained on color fundus images |
-	  | OCT-CNN | 0.891 | A resnet18 trained on OCT images |
-	  | MM-CNN-da | 0.917 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
-  
-	* <b>Pre-trained Models performance on splitAP</b>
-	  | Model       | F1 score |  |
-	  | :---------: | :----: | :---- |
-	  | CFP-CNN | 0.756 | A resnet18 trained on color fundus images |
-	  | OCT-CNN | 0.877 | A resnet18 trained on OCT images |
-	  | MM-CNN-da | 0.919 | A two-stream CNN trained on muilti-modal data with loose pair training and CAM-conditioned image synthesis |
-  
-Note that we pre-process color fundus images by CLAHE and oct by median blur, and then resize both to 448x448.
+Download from [Baidu pan](https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA) (code: y1wl), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing)
 
-Please download the pre-trained weights above, and put them into ```./code/weights/```
+The test performance of these trained models are as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
 
-## MMC-AMD Inference
-#### We have prepared two jupyter notebook files for single-modal and multi-modal inference, respectively:  
-```./notebooks/inference-and-eval-single-modal.ipynb```
+| Model | Description | splitA-test | splitAP-test |
+| :--------- | :---- | ----: | ----: |
+| CFP-CNN | A single-modal CNN trained on CFP images | 0.799 | 0.756 |
+| OCT-CNN | A single-modal CNN trained on OCT images | 0.891 | 0.877 |
+| MM-CNN-da | A two-stream CNN trained on muilti-modal data with our data augmentation strategies | 0.917 | 0.919 |
 
-```./notebooks/inference-and-eval-multi-modal.ipynb```
 
-## MMC-AMD Training
-#### 1. To train a color fundus singe-modal model, please run 
-```bash ./scripts/do_train_cfp.sh```
-#### 2. To train an oct singe-modal model, please run
-```bash ./scripts/do_train_oct.sh```
-#### 3. To train a multi-modal model without loose pair training, please run
-```bash ./scripts/do_train_mm.sh```
-#### 4. To train a multi-modal model with loose pair training, please run
-```bash ./scripts/do_train_mm_loose.sh```
+## Inference
+
++ [notebooks/inference-and-eval-single-modal.ipynb](notebooks/inference-and-eval-single-modal.ipynb): Run and evaluat4e a single-modal CNN
++ [notebooks/inference-and-eval-multi-modal.ipynb](notebooks/inference-and-eval-multi-modal.ipynb): Run and evaluate a multi-modal CNN
+
+## Training AMD Models
+
+| Script | Purpose |
+| :--------- | :---- | 
+| bash [scripts/do_train_cfp.sh](scripts/do_train_cfp.sh) | train a CFP-CNN |
+| bash [scripts/do_train_oct.sh](scripts/do_train_oct.sh) | train an OCT-CNN |
+| bash [scripts/do_train_mm.sh](scripts/do_train_mm.sh) | train an MM-CNN with conventional data argumentation |
+| bash [scripts/do_train_mm_loose.sh](scripts/do_train_mm_loose.sh) | train an MM-CNN with loose pairing | 
+| bash | train an MM-CNN with synthetic data and loose pairing | 
+
+
 
 ## CAM-conditioned image synthesis
 #### 1. Prepare CAM-conditioned label
