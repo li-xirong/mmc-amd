@@ -100,7 +100,7 @@ Please put the dataset we provided into ```./code/VisualSearch/```, which is org
 ## MMC-AMD Training
 #### 1. To train a color fundus singe-modal model, please run 
 ```bash ./scripts/do_train_cfp.sh```
-#### 2. To train a color fundus singe-modal model, please run
+#### 2. To train a oct singe-modal model, please run
 ```bash ./scripts/do_train_oct.sh```
 #### 3. To train a multi-modal model without loose pair training, please run
 ```bash ./scripts/do_train_mm.sh```
