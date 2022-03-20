@@ -114,7 +114,7 @@ Please put the dataset we provided into ```./code/VisualSearch/```, which is org
   
   ```bash ./scripts/do_generatecam.sh``` 
 * link the CAM dir generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
-* link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` which is generated in the previous step to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
+* link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
 #### 2. Train pix2pixHD and synthesize  
 ```bash ./scripts/do_synthesis_cfp.sh```
 
