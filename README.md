@@ -109,7 +109,7 @@ bash scripts/do_generate_cam.sh oct
 ```
 
 Once the CAMs are produced,
-+ Link the CAM data folder to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
++ Link the CAM data dir to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_A```
 + Link the image dir ```code/VisualSearch/mmc-amd/ImageData/$MODALITY``` to ```code/camconditioned-pix2pixHD/datasets/$DATASET_NAME/train_B```
 
 
@@ -124,8 +124,28 @@ bash scripts/do_train_pix2pixHD.sh oct
 ```bash
 bash scripts/do_img_synthesis.sh cfp
 bash scripts/do_img_synthesis.sh oct
-``` 
-
+```
+If you want to use the synthetic images in MM-CNN training, please organize the as follow
+```
+./code/VisualSearch/
+	mmc-amd/
+		ImageData/
+			cfp-clahe-448x448/
+				f-*.jpg
+			oct-median3x3-448x448/
+				o-*.jpg
+	mmc-amd-splitA-val/
+		ImageSets/		(record image ID)
+			cfp.txt
+			oct.txt
+		annotations/		
+			cfp.txt
+			oct.txt
+		ImageData/
+			cfp-clahe-448x448 		(Link it to the dir of synthetic cfp)
+			oct-median3x3-448x448		(Link it to the dir of synthetic oct)
+				
+```
 
 ## Citations
 
