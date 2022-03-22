@@ -125,7 +125,7 @@ bash scripts/do_train_pix2pixHD.sh oct
 bash scripts/do_img_synthesis.sh cfp
 bash scripts/do_img_synthesis.sh oct
 ```
-If you want to use the synthetic images in MM-CNN training, please organize them as follows
+If you want to use the synthetic images in MM-CNN-da's training, please organize them as follows.
 ```
 ./code/VisualSearch/
 	mmc-amd-splitA-syn/
