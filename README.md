@@ -128,7 +128,7 @@ bash scripts/do_img_synthesis.sh oct
 If you want to use the synthetic images in MM-CNN training, please organize them as follows
 ```
 ./code/VisualSearch/
-	mmc-amd-splitA-val/
+	mmc-amd-splitA-syn/
 		ImageSets/		(record image ID)
 			cfp.txt
 			oct.txt
