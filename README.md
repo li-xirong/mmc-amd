@@ -136,8 +136,8 @@ If you want to use the synthetic images in MM-CNN training, please organize them
 			cfp.txt
 			oct.txt
 		ImageData/
-			cfp-clahe-448x448 		(Link it to the dir of synthetic cfp)
-			oct-median3x3-448x448		(Link it to the dir of synthetic oct)
+			cfp-clahe-448x448 		(symbolic link to the dir of synthetic cfp)
+			oct-median3x3-448x448		(symbolic link to the dir of synthetic oct)
 				
 ```
 
