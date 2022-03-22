@@ -94,7 +94,7 @@ The test performance of these trained models on the two distinct data splits is 
 | bash [scripts/do_train.sh](scripts/do_train.sh) oct| train an OCT-CNN |
 | bash [scripts/do_train_mm.sh](scripts/do_train_mm.sh) | train an MM-CNN with conventional data argumentation |
 | bash [scripts/do_train_mm_loose.sh](scripts/do_train_mm_loose.sh) | train an MM-CNN with loose pairing | 
-| bash [scripts/do_train_mm_da.sh](scripts/do_train_mm_da.sh) | train an MM-CNN with synthetic data and loose pairing | 
+| bash [scripts/do_train_mm_da.sh](scripts/do_train_mm_da.sh)\\ bash [scripts/do_train_mm_da.sh](scripts/do_train_mm_da.sh)| train an MM-CNN with synthetic data and loose pairing | 
 
 
 
