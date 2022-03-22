@@ -125,15 +125,9 @@ bash scripts/do_train_pix2pixHD.sh oct
 bash scripts/do_img_synthesis.sh cfp
 bash scripts/do_img_synthesis.sh oct
 ```
-If you want to use the synthetic images in MM-CNN training, please organize the as follow
+If you want to use the synthetic images in MM-CNN training, please organize them as follows
 ```
 ./code/VisualSearch/
-	mmc-amd/
-		ImageData/
-			cfp-clahe-448x448/
-				f-*.jpg
-			oct-median3x3-448x448/
-				o-*.jpg
 	mmc-amd-splitA-val/
 		ImageSets/		(record image ID)
 			cfp.txt
