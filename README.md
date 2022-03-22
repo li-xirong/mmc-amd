@@ -104,8 +104,8 @@ The test performance of these trained models on the two distinct data splits is 
 + Make sure you have trained or downloaded CFP-CNN / OCT-CNN
 
 ```bash
-bash [scripts/do_generate_cam.sh](scripts/do_generate_cam.sh) cfp
-bash [scripts/do_generate_cam.sh](scripts/do_generate_cam.sh) oct
+bash scripts/do_generate_cam.sh cfp
+bash scripts/do_generate_cam.sh oct
 ```
 
 Once the CAMs are produced,
@@ -115,15 +115,15 @@ Once the CAMs are produced,
 
 ### Step 2. Train pix2pixHD per modality
 ```bash
-bash [scripts/do_train_pix2pixHD.sh](scripts/do_train_pix2pixHD.sh) cfp
-bash [scripts/do_train_pix2pixHD.sh](scripts/do_train_pix2pixHD.sh) oct
+bash scripts/do_train_pix2pixHD.sh cfp
+bash scripts/do_train_pix2pixHD.sh oct
 ```
 
 ### Step 3. Synthesize CFP / OCT images
 
 ```bash
-bash [scripts/do_img_synthesis.sh](scripts/do_img_synthesis.sh) cfp
-bash [scripts/do_img_synthesis.sh](scripts/do_img_synthesis.sh) oct
+bash scripts/do_img_synthesis.sh cfp
+bash scripts/do_img_synthesis.sh oct
 ``` 
 
 
