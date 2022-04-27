@@ -2,13 +2,16 @@
 
 Code and data for multi-modal categorization of age-related macular degeneration (4 classes: normal, dry AMD, pcv, wet AMD)
 
-[MICAAI2019 paper](https://arxiv.org/abs/1907.12023) | [Extended version](https://arxiv.org/abs/2012.01879)
+[MICAAI2019 paper](https://arxiv.org/abs/1907.12023) | [J-BHI 2022 article](https://arxiv.org/abs/2012.01879)
 
 <center>
     <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"     src="pipeline.jpg">
     <br>
     <div style="color:orange;  display: inline-block;    color: black;  padding: 2px;" align="left"><h><b>Proposed end-to-end deep learning solution for multi-modal AMD categorization</b>. Given a pair of CFP and OCT images from a specific eye, our two-stream CNN makes a four-class prediction concerning the probability of the eye being normal, dryAMD, PCV and wetAMD, respectively. </h></div>
 </center>
+
+## Update
++ [2022-04-27] MMC-AMD has been accepted for publication as a regular paper in the [IEEE Journal of Biomedical and Health Informatics (J-BHI)](https://www.embs.org/jbhi/)(IF: 5.772).
 
 ## Requirements
 * <b>Python-3.7.10</b>
@@ -154,12 +157,11 @@ If you find this repository useful, please consider citing:
   year      = {2019},
 }
 
-@article{arxiv-mmcamd,
+@article{jbhi22-mmcamd,
   author={Weisen Wang and Xirong Li and Zhiyan Xu and Weihong Yu and Jianchun Zhao and Dayong Ding and Youxin Chen},
   title={Learning Two-Stream {CNN} for Multi-Modal Age-related Macular Degeneration Categorization},
-  journal={arXiv preprint arXiv:2012.01879},
-  doi={10.48550/arXiv.2012.01879},
-  year={2020},
+  journal={IEEE Journal of Biomedical and Health Informatics (J-BHI)},
+  year={2022},
 }
 ```
 
