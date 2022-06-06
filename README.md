@@ -73,7 +73,7 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 
 ## Model Zoo
 
-We provide a number of trained single-modal / multi-modal CNNs at [Baidu pan](https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA) (code: y1wl), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing). 
+We provide a number of trained single-modal / multi-modal CNNs / CAMs-based GANs (preparing) at [Baidu pan](https://pan.baidu.com/s/1vN7J8NDLqWoDhcZ8um-nAA) (code: y1wl), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing). 
 
 The test performance of these trained models on the two distinct data splits is as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
 
@@ -88,6 +88,7 @@ The test performance of these trained models on the two distinct data splits is 
 
 + [notebooks/inference-and-eval-single-modal.ipynb](notebooks/inference-and-eval-single-modal.ipynb): Run and evaluate a single-modal CNN
 + [notebooks/inference-and-eval-multi-modal.ipynb](notebooks/inference-and-eval-multi-modal.ipynb): Run and evaluate a multi-modal CNN
++ [notebooks/inference-and-synthesize-fake-images.ipynb](notebooks/inference-and-synthesize-fake-images.ipynb): Run and synthesize fake images
 
 ## Training AMD Models
 
