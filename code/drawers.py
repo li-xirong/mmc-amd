@@ -37,7 +37,7 @@ class CAMDrawer(object):
         if rm_normal:
             cams = cams[1:]
         if save_path:
-            print("CAM is saved in {}.".format(save_path))
+            # print("CAM is saved in {}.".format(save_path))
             np.save(save_path, cams)
 
         return cams
@@ -49,7 +49,7 @@ class CAMDrawer(object):
             cam_flip[:, :, column] = cam[:, :, cam_flip.shape[-1] - column - 1]
 
         if save_path:
-            print("CAM is saved in {}.".format(save_path))
+            # print("CAM is saved in {}.".format(save_path))
             np.save(save_path, cam_flip)
         return cam_flip
 
@@ -81,7 +81,7 @@ class CAMDrawer(object):
         cam_move[:, randi - 2:randi + 3, randj - 2:randj + 3] = maxScorePatch
 
         if save_path:
-            print("CAM is saved in {}.".format(save_path))
+            # print("CAM is saved in {}.".format(save_path))
             np.save(save_path, cam_move)
 
         return cam_move
@@ -106,15 +106,17 @@ class CAMDrawer(object):
         return splicing
 
     @staticmethod
-    def sequence_visualize(cams_list, visual_size=(448, 448), bound=10):
+    def sequence_visualize(raw_img, cams_list, visual_size=(448, 448), bound=10):
         l = len(cams_list)
-        splicing = Image.new('RGB', (visual_size[0]*l+bound*l, visual_size[1]), (255, 255, 255))
+        splicing = Image.new('RGB', (visual_size[0]*(l+1)+bound*(l+1), visual_size[1]), (255, 255, 255))
+        raw = Image.fromarray(cv.cvtColor(raw_img, cv.COLOR_BGR2RGB)).resize(visual_size, Image.BICUBIC)
+        splicing.paste(raw, (0, 0))
         for i, cams in enumerate(cams_list):
             cams = weighted_sigmoid(cams, 0.1) * 255
             cams_rgb = np.transpose(cams, (1, 2, 0))
             cams_rgb = Image.fromarray(cams_rgb.astype('uint8')).convert('RGB')
             cams_rgb = cams_rgb.resize(visual_size, Image.BICUBIC)
-            splicing.paste(cams_rgb, (visual_size[0]*i + bound*i, 0))
+            splicing.paste(cams_rgb, (visual_size[0]*(i+1) + bound*(i+1), 0))
         return splicing
 
 

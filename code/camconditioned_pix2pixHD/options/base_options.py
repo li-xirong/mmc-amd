@@ -64,10 +64,10 @@ class BaseOptions():
         
         self.initialized = True
 
-    def parse(self, save=True):
+    def parse(self, save=True, verbose=False):
         if not self.initialized:
             self.initialize()
-        self.opt = self.parser.parse_args()
+        self.opt = self.parser.parse_args([])
         self.opt.isTrain = self.isTrain   # train or test
 
         str_ids = self.opt.gpu_ids.split(',')
@@ -83,12 +83,12 @@ class BaseOptions():
 
         args = vars(self.opt)
 
-        """
-        print('------------ Options -------------')
-        for k, v in sorted(args.items()):
-            print('%s: %s' % (str(k), str(v)))
-        print('-------------- End ----------------')
-        """
+        if verbose:
+            print('------------ Options -------------')
+            for k, v in sorted(args.items()):
+                print('%s: %s' % (str(k), str(v)))
+            print('-------------- End ----------------')
+        
 
         # save to the disk        
         expr_dir = os.path.join(self.opt.checkpoints_dir, self.opt.name)

@@ -2,7 +2,7 @@ if [ "$#" -ne 1 ]; then
     echo "Usage: $0 modality # cfp or oct"
     exit
 fi
-cd code/camconditioned-pix2pixHD/
+cd code/camconditioned_pix2pixHD/
 
 modality=$1
 data_root="datasets/"$modality"/"
