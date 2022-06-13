@@ -106,6 +106,29 @@ class CAMDrawer(object):
         return splicing
 
     @staticmethod
+    def loop_visualize(img_and_cams_list, visual_size=(448, 448), space=10):
+        row_num = len(img_and_cams_list)
+        splicing = Image.new('RGB', ((visual_size[0]+space)*2, (visual_size[1]+space)*row_num), (255, 255, 255))
+        
+        for row_idx, (raw_img, cams) in enumerate(img_and_cams_list):
+            if type(cams) == Image.Image:
+                cams_rgb = cams
+
+            else:
+                assert cams.shape[0] == 3, "only 3-channel cams can be shown in RGB format."
+                cams = weighted_sigmoid(cams, 0.1) * 255
+                cams_rgb = np.transpose(cams, (1, 2, 0))
+                cams_rgb = Image.fromarray(cams_rgb.astype('uint8')).convert('RGB')
+
+            cams_rgb = cams_rgb.resize(visual_size, Image.BICUBIC)
+            raw = Image.fromarray(cv.cvtColor(raw_img, cv.COLOR_BGR2RGB)).resize(visual_size, Image.BICUBIC)
+            
+            splicing.paste(raw, (0, (visual_size[1]+space)*row_idx))
+            splicing.paste(cams_rgb, (visual_size[0]+space, (visual_size[1]+space)*row_idx))
+            
+        return splicing
+
+    @staticmethod
     def sequence_visualize(raw_img, cams_list, visual_size=(448, 448), bound=10):
         l = len(cams_list)
         splicing = Image.new('RGB', (visual_size[0]*(l+1)+bound*(l+1), visual_size[1]), (255, 255, 255))
