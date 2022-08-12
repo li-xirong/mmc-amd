@@ -160,9 +160,14 @@ If you find this repository useful, please consider citing:
 
 @article{jbhi22-mmcamd,
   author={Weisen Wang and Xirong Li and Zhiyan Xu and Weihong Yu and Jianchun Zhao and Dayong Ding and Youxin Chen},
-  title={Learning Two-Stream {CNN} for Multi-Modal Age-related Macular Degeneration Categorization},
-  journal={IEEE Journal of Biomedical and Health Informatics (J-BHI)},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  title={Learning Two-Stream CNN for Multi-Modal Age-Related Macular Degeneration Categorization}, 
   year={2022},
+  volume={26},
+  number={8},
+  pages={4111-4122},
+  year={2022},
+  doi={10.1109/JBHI.2022.3171523},
 }
 ```
 
