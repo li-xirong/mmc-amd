@@ -11,6 +11,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
 </center>
 
 ## Update
++ [2026-04-08] [MMC-AMD-EI](https://github.com/ruc-aimc-lab/EI/tree/main/datasplits/mmc-amd) as a modality-complete subset, with 768 multimodal samples in total.
 + [2022-04-27] MMC-AMD has been accepted for publication as a regular paper in the [IEEE Journal of Biomedical and Health Informatics (J-BHI)](https://www.embs.org/jbhi/)(IF: 5.772).
 
 ## Requirements
@@ -24,8 +25,8 @@ Code and data for multi-modal categorization of age-related macular degeneration
 ## Data
 
 + **MMC-AMD**, a multi-modal fundus image set consisting of 1,093 color fundus photograph (CFP) images and 1,288 OCT B-scan images (~470MB). Freely available upon request and for ***research purposes*** only. Please submit your request via [Google Form](https://forms.gle/jJT6H9N9CY34gFBWA).
-+ **MMC-AMD (splitA)**: An eye-based split of training / validation / test sets (zero eye overlap) [Google drive](https://drive.google.com/file/d/1El2pBzNnQsjRVLE_QwFNhS05HWJMPwkU/view?usp=sharing)
 + **MMC-AMD (splitAP)**: A patient-based split of training / validation / test sets (zero patient overlap) [Google drive](https://drive.google.com/file/d/1KwJdsQmO__TpCW2AcRdsoTocu-zwcZuT/view?usp=sharing)
++ **MMC-AMD (EI)**: A modality-complete subset used in [our EI paper](https://arxiv.org/abs/2603.17514), with [768 multimodal samples](https://github.com/ruc-aimc-lab/EI/tree/main/datasplits/mmc-amd) in total. Each sample consists of a CFP image and one to six OCT images with an average number of 1.6. 
 
 ### Organizaton
 
@@ -38,7 +39,7 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 				f-*.jpg
 			oct-median3x3-448x448/
 				o-*.jpg
-	mmc-amd-splitA-train/
+	mmc-amd-splitAP-train/
 		ImageSets/		(record image ID)
 			cfp.txt
 			oct.txt
@@ -53,7 +54,7 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 			oct.txt
 		ImageData		(symbolic link to $PATH/code/VisualSearch/mmc-amd/ImageData)
 		
-	mmc-amd-splitA-val/ (mmc-amd-splitA-test/)
+	mmc-amd-splitAP-val/ (mmc-amd-splitAP-test/)
 		ImageSets/
 			cfp.txt
 			oct.txt
@@ -75,13 +76,13 @@ By default, all the data folders are assumed to be placed (via symbolic links) a
 
 We provide a number of trained single-modal / multi-modal CNNs / CAMs-based GANs at [Baidu pan](https://pan.baidu.com/s/1LeS5kBEBMvLk1tOJaTQitQ) (code: tkht), [Google drive](https://drive.google.com/drive/folders/1U1JM7c9mqP79cgLQxgGnBARzR4U_OKUA?usp=sharing). 
 
-The test performance of these trained models on the two distinct data splits is as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
+The test performance of these trained models on splitAP is as follows. Note that the numbers may differ (slightly) from that reported in the paper, wherein we report averaged result of three independent runs per model.
 
-| Model | Description | splitA-test | splitAP-test |
-| :--------- | :---- | ----: | ----: |
-| CFP-CNN | A single-modal CNN trained on CFP images | 0.799 | 0.756 |
-| OCT-CNN | A single-modal CNN trained on OCT images | 0.891 | 0.877 |
-| MM-CNN-da | A two-stream CNN trained on muilti-modal data with our data augmentation strategies | 0.917 | 0.919 |
+| Model | Description | splitAP-test |
+| :--------- | :----  | ----: |
+| CFP-CNN | A single-modal CNN trained on CFP images  | 0.756 |
+| OCT-CNN | A single-modal CNN trained on OCT images  | 0.877 |
+| MM-CNN-da | A two-stream CNN trained on multi-modal data with our data augmentation strategies |  0.919 |
 
 
 ## Inference
@@ -132,7 +133,7 @@ bash scripts/do_img_synthesis.sh oct
 If you want to use the synthetic images in MM-CNN-da's training, please organize them as follows.
 ```
 ./code/VisualSearch/
-	mmc-amd-splitA-syn/
+	mmc-amd-splitAP-syn/
 		ImageSets/		(record image ID)
 			cfp.txt
 			oct.txt
