@@ -11,7 +11,7 @@ Code and data for multi-modal categorization of age-related macular degeneration
 </center>
 
 ## Update
-+ [2026-04-08] [MMC-AMD-EI](https://github.com/ruc-aimc-lab/EI/tree/main/datasplits/mmc-amd) as a modality-complete subset, with 768 multimodal samples in total.
++ [2026-04-08] [MMC-AMD-EI](https://github.com/ruc-aimc-lab/EI/tree/main/datasplit) as a modality-complete subset, with 768 multimodal samples in total.
 + [2022-04-27] MMC-AMD has been accepted for publication as a regular paper in the [IEEE Journal of Biomedical and Health Informatics (J-BHI)](https://www.embs.org/jbhi/)(IF: 5.772).
 
 ## Requirements
